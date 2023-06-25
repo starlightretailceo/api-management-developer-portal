@@ -39,7 +39,7 @@ export class HistoryOfApiViewModelBinder implements ViewModelBinder<HistoryOfApi
         };
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, HistoryOfApiHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;
