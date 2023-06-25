@@ -1,21 +1,12 @@
-﻿import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
+﻿import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
+import { IWidgetHandler } from "@paperbits/common/editing";
 import { StyleDefinition } from "@paperbits/common/styles";
 import { ProductSubscriptionsModel } from "./productSubscriptionsModel";
-import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 
 export class ProductSubscriptionsHandlers implements IWidgetHandler {
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "product-subscriptions",
-            category: "Products",
-            displayName: "Product: Subscriptions",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ProductSubscriptionsModel()
-        };
-
-        return widgetOrder;
+    public async getWidgetModel(): Promise<ProductSubscriptionsModel> {
+        return new ProductSubscriptionsModel();
     }
 
     public getStyleDefinitions(): StyleDefinition {

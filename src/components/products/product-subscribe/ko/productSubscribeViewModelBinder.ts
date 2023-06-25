@@ -37,7 +37,7 @@ export class ProductSubscribeViewModelBinder implements ViewModelBinder<ProductS
         };
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, ProductSubscribeHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;

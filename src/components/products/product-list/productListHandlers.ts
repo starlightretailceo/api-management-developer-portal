@@ -1,20 +1,11 @@
-﻿import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
+﻿import { IWidgetHandler } from "@paperbits/common/editing";
 import { StyleDefinition } from "@paperbits/common/styles";
 import { ProductListModel } from "./productListModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class ProductListHandlers implements IWidgetHandler {
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "productList",
-            category: "Products",
-            displayName: "List of products",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ProductListModel("list")
-        };
-
-        return widgetOrder;
+    public async getWidgetModel(): Promise<ProductListModel> {
+        return new ProductListModel("list");
     }
 
     public getStyleDefinitions(): StyleDefinition {
@@ -31,6 +22,12 @@ export class ProductListHandlers implements IWidgetHandler {
                     defaults: {
                         value: "#dee2e6"
                     }
+                },
+                displayTextColor: {
+                    displayName: "Text color",
+                    defaults: {
+                        value: "#252525"
+                    }
                 }
             },
             components: {
@@ -42,36 +39,7 @@ export class ProductListHandlers implements IWidgetHandler {
                         tableRow: DefaultStyleDefinitions.getTableRowStyleDefinition(),
                         tableHead: DefaultStyleDefinitions.getTableHeadStyleDefinition()
                     }
-                }
-            }
-        };
-    }
-}
-
-export class ProductListDropdownHandlers implements IWidgetHandler {
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "productListDropdown",
-            category: "Products",
-            displayName: "List of products (dropdown)",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ProductListModel("dropdown")
-        };
-
-        return widgetOrder;
-    }
-    public getStyleDefinitions(): StyleDefinition {
-        return {
-            colors: {
-                displayTextColor: {
-                    displayName: "Text color",
-                    defaults: {
-                        value: "#252525"
-                    }
-                }
-            },
-            components: {
+                },
                 productListDropdown: {
                     displayName: "Product List Dropdown",
                     plugins: ["margin", "padding", "typography"],
@@ -86,10 +54,10 @@ export class ProductListDropdownHandlers implements IWidgetHandler {
                                     colorKey: "colors/defaultBg"
                                 },
                                 padding: {
-                                    top: "20px",
-                                    right: "20px",
-                                    bottom: "20px",
-                                    left: "20px",
+                                    top: 20,
+                                    right: 20,
+                                    bottom: 20,
+                                    left: 20
                                 },
                                 shadow: {
                                     shadowKey: "shadows/shadow1"
@@ -99,37 +67,7 @@ export class ProductListDropdownHandlers implements IWidgetHandler {
                         dropdownSearchInput: DefaultStyleDefinitions.getSearchInputStyleDefinition(),
                         widgetText: DefaultStyleDefinitions.getWidgetTextStyleDefinition()
                     }
-                }
-            }
-        };
-    }
-}
-
-export class ProductListTilesHandlers implements IWidgetHandler {
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "productListTiles",
-            category: "Products",
-            displayName: "List of products (tiles)",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ProductListModel("tiles")
-        };
-
-        return widgetOrder;
-    }
-
-    public getStyleDefinitions(): StyleDefinition {
-        return {
-            colors: {
-                borderColor: {
-                    displayName: "Search input border color",
-                    defaults: {
-                        value: "#505050"
-                    }
-                }
-            },
-            components: {
+                },
                 productListTiles: {
                     displayName: "List of products (tiles)",
                     plugins: ["margin", "padding", "background"],
@@ -141,8 +79,19 @@ export class ProductListTilesHandlers implements IWidgetHandler {
                         widgetText: DefaultStyleDefinitions.getWidgetTextStyleDefinition()
                     }
                 }
-
             }
         };
+    }
+}
+
+export class ProductListDropdownHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductListModel> {
+        return new ProductListModel("dropdown");
+    }
+}
+
+export class ProductListTilesHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductListModel> {
+        return new ProductListModel("tiles");
     }
 }
