@@ -35,7 +35,6 @@ export class UnsavedChangesRouteGuard implements RouteGuard {
                     const toast = this.viewManager.addToast("Unsaved changes", `You have unsaved changes. Do you want to save or discard them?`, [
                         {
                             title: "Save",
-                            iconClass: "paperbits-check-2",
                             action: async (): Promise<void> => {
                                 await this.offlineObjectStorage.saveChanges();
                                 this.viewManager.removeToast(toast);
@@ -44,7 +43,6 @@ export class UnsavedChangesRouteGuard implements RouteGuard {
                         },
                         {
                             title: "Discard",
-                            iconClass: "paperbits-simple-remove",
                             action: async (): Promise<void> => {
                                 await this.offlineObjectStorage.discardChanges();
                                 this.viewManager.removeToast(toast);

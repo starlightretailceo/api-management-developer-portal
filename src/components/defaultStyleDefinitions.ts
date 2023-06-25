@@ -50,14 +50,14 @@ export function getDropdownInputStyleDefinition(): ComponentStyleDefinition {
             },
             typography: {
                 fontSize: "1rem",
-                lineHeight: "1.5",
+                lineHeight: 1.5,
                 colorKey: "colors/displayTextColor"
             },
             padding: {
-                top: "7px",
-                right: "10px",
-                bottom: "5px",
-                left: "10px"
+                top: 7,
+                right: 10,
+                bottom: 5,
+                left: 10
             },
             margin: {
                 top: 0,
@@ -101,10 +101,10 @@ export function getDropdownInputButtonStyleDefinition(): ComponentStyleDefinitio
                 colorKey: "colors/default"
             },
             padding: {
-                top: "7px",
-                right: "10px",
-                bottom: "5px",
-                left: "10px"
+                top: 7,
+                right: 10,
+                bottom: 5,
+                left: 10
             },
             border: {
                 top: {
@@ -308,7 +308,6 @@ export function getTableRowStyleDefinition(): ComponentStyleDefinition {
             padding: {
                 top: ".75rem",
                 bottom: ".75rem"
-
             }
         }
     };
@@ -321,7 +320,7 @@ export function getTableHeadStyleDefinition(): ComponentStyleDefinition {
         defaults: {
             border: {
                 bottom: {
-                    width: "1",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/gridBorderColor"
                 }
@@ -401,22 +400,22 @@ export function getInputStyleDefinition(): ComponentStyleDefinition {
             },
             border: {
                 bottom: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 top: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 left: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 right: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
@@ -494,7 +493,7 @@ export function getApiTypeBadgeStyleDefinition(): ComponentStyleDefinition {
             typography: {
                 colorKey: "colors/badgeColor",
                 fontWeight: "normal",
-                fontSize: "10px",
+                fontSize: 10,
                 fontFamily: "Menlo,Monaco,Consolas,\"Courier New\",monospace"
             },
             border: {
@@ -692,22 +691,22 @@ export function getConsoleInputStyleDefinition(): ComponentStyleDefinition {
             },
             border: {
                 bottom: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 top: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 left: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
                 right: {
-                    width: "1px",
+                    width: 1,
                     style: "solid",
                     colorKey: "colors/borderColor"
                 },
