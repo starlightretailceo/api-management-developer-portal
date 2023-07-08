@@ -33,7 +33,7 @@ export class ConfirmPassworViewModelBinder implements ViewModelBinder<ConfirmPas
         }
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, ConfirmPasswordHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;

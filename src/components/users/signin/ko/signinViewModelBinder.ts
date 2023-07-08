@@ -72,7 +72,7 @@ export class SigninViewModelBinder implements ViewModelBinder<SigninModel, Signi
         }
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, SigninHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;

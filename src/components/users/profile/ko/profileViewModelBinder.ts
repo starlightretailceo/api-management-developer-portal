@@ -33,7 +33,7 @@ export class ProfileViewModelBinder implements ViewModelBinder<ProfileModel, Pro
         }
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, ProfileHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;

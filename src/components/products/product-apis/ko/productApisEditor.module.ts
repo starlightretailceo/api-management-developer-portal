@@ -1,5 +1,5 @@
 import { IInjectorModule, IInjector } from "@paperbits/common/injection";
-import { ProductApisHandlers, ProductApisTilesHandlers } from "../productApisHandlers";
+import { ProductApisHandlers } from "../productApisHandlers";
 import { ProductApisEditor } from "./productApisEditor";
 import { KnockoutComponentBinder } from "@paperbits/core/ko";
 import { IWidgetService } from "@paperbits/common/widgets";

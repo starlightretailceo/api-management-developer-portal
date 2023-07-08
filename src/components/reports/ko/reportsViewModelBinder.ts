@@ -31,7 +31,7 @@ export class ReportsViewModelBinder implements ViewModelBinder<ReportsModel, Rep
         };
 
         if (model.styles) {
-            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager, ReportsHandlers));
+            viewModel.styles(await this.styleCompiler.getStyleModelAsync(model.styles, bindingContext?.styleManager));
         }
 
         return viewModel;
