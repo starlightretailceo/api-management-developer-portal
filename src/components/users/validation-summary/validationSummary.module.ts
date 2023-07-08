@@ -1,7 +1,6 @@
 import { IInjector, IInjectorModule } from "@paperbits/common/injection";
 import { IWidgetService } from "@paperbits/common/widgets";
 import { KnockoutComponentBinder } from "@paperbits/core/ko";
-import { ValidationSummaryEditor } from "./ko/validationSummaryEditor";
 import { ValidationSummaryViewModel } from "./ko/validationSummaryViewModel";
 import { ValidationSummaryViewModelBinder } from "./ko/validationSummaryViewModelBinder";
 import { ValidationSummaryModel } from "./validationSummaryModel";
@@ -10,7 +9,6 @@ import { ValidationSummaryModelBinder } from "./validationSummaryModelBinder";
 
 export class ValidationSummaryModule implements IInjectorModule {
     public register(injector: IInjector): void {
-        injector.bind("validationSummaryEditor", ValidationSummaryEditor);
         injector.bindSingleton("validationSummaryModelBinder", ValidationSummaryModelBinder);
         injector.bindSingleton("validationSummaryViewModelBinder", ValidationSummaryViewModelBinder)
 
@@ -23,6 +21,5 @@ export class ValidationSummaryModule implements IInjectorModule {
             modelBinder: ValidationSummaryModelBinder,
             viewModelBinder: ValidationSummaryViewModelBinder
         });
-
     }
 }
