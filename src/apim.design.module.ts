@@ -9,7 +9,6 @@ import { ConsoleLogger } from "@paperbits/common/logging";
 import { DefaultSessionManager } from "@paperbits/common/persistence/defaultSessionManager";
 import { HistoryRouteHandler } from "@paperbits/common/routing";
 import { RoleBasedSecurityDesignModule } from "@paperbits/core/security/roleBasedSecurity.design.module";
-import { ListOfApisModule } from "./components/apis/list-of-apis/ko/listOfApis.module";
 import { ListOfApisEditorModule } from "./components/apis/list-of-apis/ko/listOfApisEditor.module";
 import { DetailsOfApiModule } from "./components/apis/details-of-api/ko/detailsOfApi.module";
 import { DetailsOfApiEditorModule } from "./components/apis/details-of-api/ko/detailsOfApiEditor.module";
@@ -33,7 +32,6 @@ import { MapiClient, IdentityService } from "./services";
 import { SetupModule } from "./components/setup/setup.module";
 import { ContentModule } from "./components/content";
 import { CustomWidgetListModule } from "./components/custom-widget-list";
-import { OperationListModule } from "./components/operations/operation-list/ko/operationList.module";
 import { OperationListEditorModule } from "./components/operations/operation-list/ko/operationListEditor.module";
 import { OperationDetailsDesignModule } from "./components/operations/operation-details/operationDetails.design.module";
 import { ProductListModule } from "./components/products/product-list/ko/productList.module";
@@ -74,7 +72,6 @@ import { CodeEditor } from "./components/code-editor/code-editor";
 export class ApimDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindModule(new SetupModule());
-        injector.bindModule(new ListOfApisModule());
         injector.bindModule(new ListOfApisEditorModule());
         injector.bindModule(new ApiProductsModule());
         injector.bindModule(new ApiProductsEditorModule());
@@ -104,7 +101,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ProductDetailsDesignModule());
         injector.bindModule(new ProductSubscribeModule());
         injector.bindModule(new ProductSubscribeEditorModule());
-        injector.bindModule(new OperationListModule());
         injector.bindModule(new OperationListEditorModule());
         injector.bindModule(new OperationDetailsDesignModule());
         injector.bindModule(new ReportsModule());

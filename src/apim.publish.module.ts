@@ -4,7 +4,7 @@ import { ConsoleLogger } from "@paperbits/common/logging";
 import { RoleBasedSecurityPublishModule } from "@paperbits/core/security/roleBasedSecurity.publish.module";
 import { MapiClient } from "./services/mapiClient";
 import { MapiObjectStorage, MapiBlobStorage } from "./persistence";
-import { ListOfApisModule } from "./components/apis/list-of-apis/ko/listOfApis.module";
+import { ListOfApisPublishModule } from "./components/apis/list-of-apis/ko/listOfApis.module";
 import { DetailsOfApiModule } from "./components/apis/details-of-api/ko/detailsOfApi.module";
 import { HistoryOfApiModule } from "./components/apis/history-of-api/ko/historyOfApi.module";
 import { SigninModule } from "./components/users/signin/signin.module";
@@ -17,7 +17,7 @@ import { ProductDetailsModule } from "./components/products/product-details/prod
 import { StaticRouter } from "./components/staticRouter";
 import { StaticUserService } from "./services/userService";
 import { StaticAuthenticator } from "./components/staticAuthenticator";
-import { OperationListModule } from "./components/operations/operation-list/ko/operationList.module";
+import { OperationListPublishModule } from "./components/operations/operation-list/ko/operationList.module";
 import { OperationDetailsPublishModule } from "./components/operations/operation-details/operationDetails.publish.module";
 import { ProductListModule } from "./components/products/product-list/ko/productList.module";
 import { ProductSubscribeModule } from "./components/products/product-subscribe/ko/productSubscribe.module";
@@ -45,7 +45,7 @@ import { staticDataEnvironment,mockStaticDataEnvironment } from "./../environmen
 
 export class ApimPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
-        injector.bindModule(new ListOfApisModule());
+        injector.bindModule(new ListOfApisPublishModule());
         injector.bindModule(new ApiProductsModule());
         injector.bindModule(new DetailsOfApiModule());
         injector.bindModule(new HistoryOfApiModule());
@@ -60,7 +60,7 @@ export class ApimPublishModule implements IInjectorModule {
         injector.bindModule(new ProductApisModule());
         injector.bindModule(new ProductSubscriptionsModule());
         injector.bindModule(new ProductSubscribeModule());
-        injector.bindModule(new OperationListModule());
+        injector.bindModule(new OperationListPublishModule());
         injector.bindModule(new OperationDetailsPublishModule());
         injector.bindModule(new ResetPasswordModule());
         injector.bindModule(new ConfirmPasswordModule());
