@@ -53,7 +53,6 @@ import { HelpModule } from "./components/help";
 import { ChangePasswordModule } from "./components/users/change-password/ko/changePassword.module";
 import { ChangePasswordEditorModule } from "./components/users/change-password/ko/changePasswordEditor.module";
 import { TenantService } from "./services/tenantService";
-import { ValidationSummaryModule } from "./components/users/validation-summary/validationSummary.module";
 import { ValidationSummaryDesignModule } from "./components/users/validation-summary/validationSummary.design.module";
 import { BackendService } from "./services/backendService";
 import { StaticRoleService } from "./services/roleService";
@@ -112,7 +111,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ChangePasswordModule());
         injector.bindModule(new ChangePasswordEditorModule());
         injector.bindModule(new ValidationSummaryDesignModule());
-        injector.bindModule(new ValidationSummaryModule());
         injector.bindModule(new CustomHtmlDesignModule());
         injector.bindModule(new CustomWidgetDesignModule());
         injector.bindModule(new RoleBasedSecurityDesignModule());
