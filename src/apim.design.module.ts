@@ -12,7 +12,6 @@ import { RoleBasedSecurityDesignModule } from "@paperbits/core/security/roleBase
 import { ListOfApisEditorModule } from "./components/apis/list-of-apis/ko/listOfApisEditor.module";
 import { DetailsOfApiModule } from "./components/apis/details-of-api/ko/detailsOfApi.module";
 import { DetailsOfApiEditorModule } from "./components/apis/details-of-api/ko/detailsOfApiEditor.module";
-import { HistoryOfApiModule } from "./components/apis/history-of-api/ko/historyOfApi.module";
 import { HistoryOfApiEditorModule } from "./components/apis/history-of-api/ko/historyOfApiEditor.module";
 import { SigninModule } from "./components/users/signin/signin.module";
 import { SigninDesignModule } from "./components/users/signin/signin.design.module";
@@ -75,7 +74,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ApiProductsEditorModule());
         injector.bindModule(new DetailsOfApiModule());
         injector.bindModule(new DetailsOfApiEditorModule());
-        injector.bindModule(new HistoryOfApiModule());
         injector.bindModule(new HistoryOfApiEditorModule());
         injector.bindModule(new SigninModule());
         injector.bindModule(new SigninDesignModule());
