@@ -24,7 +24,6 @@ import { SignupModule } from "./components/users/signup/signup.module";
 import { SignupDesignModule } from "./components/users/signup/signup.design.module";
 import { ProfileModule } from "./components/users/profile/profile.module";
 import { ProfileDesignModule } from "./components/users/profile/profile.design.module";
-import { SubscriptionsModule } from "./components/users/subscriptions/subscriptions.module";
 import { SubscriptionsDesignModule } from "./components/users/subscriptions/subscriptions.design.module";
 import { ProductDetailsModule } from "./components/products/product-details/productDetails.module";
 import { ProductDetailsDesignModule } from "./components/products/product-details/productDetails.design.module";
@@ -88,7 +87,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new SignupDesignModule());
         injector.bindModule(new ProfileModule());
         injector.bindModule(new ProfileDesignModule());
-        injector.bindModule(new SubscriptionsModule());
         injector.bindModule(new SubscriptionsDesignModule());
         injector.bindModule(new ProductListModule());
         injector.bindModule(new ProductListEditorModule());
