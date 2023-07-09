@@ -39,7 +39,6 @@ import { ReportsEditorModule } from "./components/reports/ko/reportsEditor.modul
 import { ResetPasswordDesignModule } from "./components/users/reset-password/resetPassword.design.module";
 import { ConfirmPasswordEditorModule } from "./components/users/confirm-password/ko/confirmPasswordEditor.module";
 import { HelpModule } from "./components/help";
-import { ChangePasswordModule } from "./components/users/change-password/ko/changePassword.module";
 import { ChangePasswordEditorModule } from "./components/users/change-password/ko/changePasswordEditor.module";
 import { TenantService } from "./services/tenantService";
 import { ValidationSummaryDesignModule } from "./components/users/validation-summary/validationSummary.design.module";
@@ -56,6 +55,7 @@ import { RuntimeConfigurator } from "./services/runtimeConfigurator";
 import { CustomHtmlDesignModule } from "./components/custom-html/customHtml.design.module";
 import { CustomWidgetDesignModule } from "./components/custom-widget/customWidget.design.module";
 import { CodeEditor } from "./components/code-editor/code-editor";
+
 
 export class ApimDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
@@ -86,7 +86,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ReportsEditorModule());
         injector.bindModule(new ResetPasswordDesignModule());
         injector.bindModule(new ConfirmPasswordEditorModule());
-        injector.bindModule(new ChangePasswordModule());
         injector.bindModule(new ChangePasswordEditorModule());
         injector.bindModule(new ValidationSummaryDesignModule());
         injector.bindModule(new CustomHtmlDesignModule());
