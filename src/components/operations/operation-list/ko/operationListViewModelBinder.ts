@@ -3,6 +3,7 @@ import { OperationListViewModel } from "./operationListViewModel";
 import { OperationListModel } from "../operationListModel";
 import { StyleCompiler } from "@paperbits/common/styles";
 
+
 export class OperationListViewModelBinder implements ViewModelBinder<OperationListModel, OperationListViewModel> {
     constructor(private readonly styleCompiler: StyleCompiler) { }
 

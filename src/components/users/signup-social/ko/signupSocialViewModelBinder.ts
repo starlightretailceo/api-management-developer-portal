@@ -1,6 +1,6 @@
 import { Bag } from "@paperbits/common";
 import { ComponentFlow } from "@paperbits/common/editing";
-import { ViewModelBinder } from "@paperbits/common/widgets";
+import { ViewModelBinder, WidgetState } from "@paperbits/common/widgets";
 import { TermsOfService } from "../../../../contracts/identitySettings";
 import { IdentityService } from "../../../../services/identityService";
 import { SignupSocialModel } from "../signupSocialModel";
@@ -68,7 +68,36 @@ export class SignupSocialViewModelBinder implements ViewModelBinder<SignupSocial
         return viewModel;
     }
 
-    public canHandleModel(model: SignupSocialModel): boolean {
-        return model instanceof SignupSocialModel;
+
+    public stateToInstance(state: WidgetState, componentInstance: SignupSocialViewModel): void {
+        componentInstance.styles(state.styles);
+        componentInstance.identityProvider(state.identityProvider);
+
+        componentInstance.runtimeConfig(JSON.stringify({
+            termsOfUse: state.termsOfUse,
+            isConsentRequired: state.isConsentRequired,
+            termsEnabled: state.termsEnabled
+        }));
+    }
+
+    public async modelToState(model: SignupSocialModel, state: WidgetState): Promise<void> {
+        const identityProviders = await this.identityService.getIdentityProviders();
+        const identityProvider = identityProviders.find(x => x.type === "aad" || x.type === "aadB2C");
+
+        if (identityProvider) {
+            state.identityProvider = true;
+        }
+
+        const settings = await this.settingsProvider.getSettings();
+        state.mode = settings["environment"];
+
+        const termsOfService = await this.getTermsOfService();
+        state.termsOfUse = termsOfService.text;
+        state.isConsentRequired = termsOfService.consentRequired;
+        state.termsEnabled = termsOfService.enabled;
+
+        if (model.styles) {
+            state.styles = await this.styleCompiler.getStyleModelAsync(model.styles);
+        }
     }
 }
