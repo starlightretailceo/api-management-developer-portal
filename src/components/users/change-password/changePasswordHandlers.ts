@@ -4,6 +4,10 @@ import { ChangePasswordModel } from "./changePasswordModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class ChangePasswordHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ChangePasswordModel> {
+        return new ChangePasswordModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "change-password",

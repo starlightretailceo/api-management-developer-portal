@@ -2,6 +2,10 @@
 import { ApiProductsModel } from "./apiProductsModel";
 
 export class ApiProductsHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ApiProductsModel> {
+        return new ApiProductsModel("list");
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "api-products",
@@ -17,6 +21,10 @@ export class ApiProductsHandlers implements IWidgetHandler {
 }
 
 export class ApiProductsDropdownHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ApiProductsModel> {
+        return new ApiProductsModel("dropdown");
+    }
+
   public async getWidgetOrder(): Promise<IWidgetOrder> {
     const widgetOrder: IWidgetOrder = {
       name: "api-products-dropdown",
@@ -32,6 +40,10 @@ export class ApiProductsDropdownHandlers implements IWidgetHandler {
 }
 
 export class ApiProductsTilesHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ApiProductsModel> {
+        return new ApiProductsModel("tiles");
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "api-products-tiles",

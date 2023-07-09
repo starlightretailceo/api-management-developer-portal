@@ -3,6 +3,10 @@ import { StyleDefinition } from "@paperbits/common/styles";
 import { ProductDetailsModel } from "./productDetailsModel";
 
 export class ProductDetailsHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductDetailsModel> {
+        return new ProductDetailsModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "productDetails",

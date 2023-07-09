@@ -4,6 +4,10 @@ import { ProductApisModel } from "./productApisModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class ProductApisHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductApisModel> {
+        return new ProductApisModel("list")
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "product-apis",
@@ -61,6 +65,10 @@ export class ProductApisHandlers implements IWidgetHandler {
 }
 
 export class ProductApisTilesHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductApisModel> {
+        return new ProductApisModel("tiles")
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "product-apis-tiles",

@@ -3,6 +3,10 @@ import { SigninSocialModel } from "./signinSocialModel";
 
 
 export class SigninSocialHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<SigninSocialModel> {
+        return new SigninSocialModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "signinSocial",

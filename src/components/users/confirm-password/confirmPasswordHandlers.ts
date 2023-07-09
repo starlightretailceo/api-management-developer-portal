@@ -5,6 +5,10 @@ import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 
 export class ConfirmPasswordHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ConfirmPasswordModel> {
+        return new ConfirmPasswordModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "confirmPassword",

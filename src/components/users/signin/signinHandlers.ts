@@ -4,6 +4,10 @@ import { SigninModel } from "./signinModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class SigninHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<SigninModel> {
+        return new SigninModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "signin",

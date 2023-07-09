@@ -4,6 +4,10 @@ import { DetailsOfApiModel } from "./detailsOfApiModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class DetailsOfApiHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<DetailsOfApiModel> {
+        return new DetailsOfApiModel();
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "apiDetails",

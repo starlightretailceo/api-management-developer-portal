@@ -4,6 +4,10 @@ import { ProfileModel } from "./profileModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class ProfileHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProfileModel> {
+        return new ProfileModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "profile",

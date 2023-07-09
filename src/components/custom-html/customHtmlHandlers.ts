@@ -5,6 +5,14 @@ import { htmlCodeInitial, htmlCodeSizeStylesInitial } from "./ko/constants";
 import { StyleHelper } from "@paperbits/styles";
 
 export class HTMLInjectionHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<HTMLInjectionModel> {
+        const model = new HTMLInjectionModel();
+        model.htmlCode = htmlCodeInitial;
+        model.inheritStyling = true;
+        StyleHelper.setPluginConfigForLocalStyles(model.styles, "size", htmlCodeSizeStylesInitial);
+        return model;
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: widgetName,
@@ -13,7 +21,7 @@ export class HTMLInjectionHandlers implements IWidgetHandler {
             displayName: widgetDisplayName,
             iconClass: widgetIconClass,
 
-            createModel: async () => { 
+            createModel: async () => {
                 const model = new HTMLInjectionModel();
                 model.htmlCode = htmlCodeInitial;
                 model.inheritStyling = true;

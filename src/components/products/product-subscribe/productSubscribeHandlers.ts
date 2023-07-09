@@ -4,6 +4,10 @@ import { ProductSubscribeModel } from "./productSubscribeModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class ProductSubscribeHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<ProductSubscribeModel> {
+        return new ProductSubscribeModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "productSubscribe",

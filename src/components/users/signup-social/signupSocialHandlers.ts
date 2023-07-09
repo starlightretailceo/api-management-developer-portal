@@ -3,6 +3,10 @@ import { StyleDefinition } from "@paperbits/common/styles";
 import { SignupSocialModel } from "./signupSocialModel"; import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
 
 export class SignupSocialHandlers implements IWidgetHandler {
+    public async getWidgetModel(): Promise<SignupSocialModel> {
+        return new SignupSocialModel()
+    }
+
     public async getWidgetOrder(): Promise<IWidgetOrder> {
         const widgetOrder: IWidgetOrder = {
             name: "signup",
