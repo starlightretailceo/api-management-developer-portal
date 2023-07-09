@@ -19,7 +19,6 @@ import { SigninSocialModule } from "./components/users/signin-social/signinSocia
 import { SigninSocialEditorModule } from "./components/users/signin-social/signinSocial.design.module";
 import { SignupSocialDesignModule } from "./components/users/signup-social/signupSocial.design.module";
 import { SignupDesignModule } from "./components/users/signup/signup.design.module";
-import { ProfileModule } from "./components/users/profile/profile.module";
 import { ProfileDesignModule } from "./components/users/profile/profile.design.module";
 import { SubscriptionsDesignModule } from "./components/users/subscriptions/subscriptions.design.module";
 import { ProductDetailsModule } from "./components/products/product-details/productDetails.module";
@@ -32,7 +31,6 @@ import { OperationListEditorModule } from "./components/operations/operation-lis
 import { OperationDetailsDesignModule } from "./components/operations/operation-details/operationDetails.design.module";
 import { ProductListModule } from "./components/products/product-list/ko/productList.module";
 import { ProductListEditorModule } from "./components/products/product-list/ko/productListEditor.module";
-import { ProductSubscribeModule } from "./components/products/product-subscribe/ko/productSubscribe.module";
 import { ProductSubscribeEditorModule } from "./components/products/product-subscribe/ko/productSubscribeEditor.module";
 import { ProductApisModule } from "./components/products/product-apis/ko/productApis.module";
 import { ProductApisEditorModule } from "./components/products/product-apis/ko/productApisEditor.module";
@@ -77,7 +75,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new SigninSocialEditorModule());
         injector.bindModule(new SignupSocialDesignModule());
         injector.bindModule(new SignupDesignModule());
-        injector.bindModule(new ProfileModule());
         injector.bindModule(new ProfileDesignModule());
         injector.bindModule(new SubscriptionsDesignModule());
         injector.bindModule(new ProductListModule());
@@ -88,7 +85,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new ProductSubscriptionsEditorModule());
         injector.bindModule(new ProductDetailsModule());
         injector.bindModule(new ProductDetailsDesignModule());
-        injector.bindModule(new ProductSubscribeModule());
         injector.bindModule(new ProductSubscribeEditorModule());
         injector.bindModule(new OperationListEditorModule());
         injector.bindModule(new OperationDetailsDesignModule());
