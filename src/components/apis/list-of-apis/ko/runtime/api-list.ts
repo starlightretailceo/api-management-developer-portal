@@ -73,8 +73,6 @@ export class ApiList {
 
         this.pageNumber
             .subscribe(this.loadPageOfApis);
-
-        console.log(this.detailsPageUrl());
     }
 
     /**
