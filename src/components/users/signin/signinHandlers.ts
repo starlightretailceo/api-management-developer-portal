@@ -1,24 +1,11 @@
-﻿import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
+﻿import { IWidgetHandler } from "@paperbits/common/editing";
 import { StyleDefinition } from "@paperbits/common/styles";
-import { SigninModel } from "./signinModel";
 import * as DefaultStyleDefinitions from "../../defaultStyleDefinitions";
+import { SigninModel } from "./signinModel";
 
 export class SigninHandlers implements IWidgetHandler {
     public async getWidgetModel(): Promise<SigninModel> {
         return new SigninModel()
-    }
-
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "signin",
-            category: "User",
-            displayName: "Sign-in form: Basic",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new SigninModel()
-        };
-
-        return widgetOrder;
     }
 
     public getStyleDefinitions(): StyleDefinition {
