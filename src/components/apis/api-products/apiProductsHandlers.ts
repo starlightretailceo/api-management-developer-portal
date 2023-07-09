@@ -1,22 +1,9 @@
-﻿import { IWidgetOrder, IWidgetHandler } from "@paperbits/common/editing";
+﻿import { IWidgetHandler } from "@paperbits/common/editing";
 import { ApiProductsModel } from "./apiProductsModel";
 
 export class ApiProductsHandlers implements IWidgetHandler {
     public async getWidgetModel(): Promise<ApiProductsModel> {
         return new ApiProductsModel("list");
-    }
-
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "api-products",
-            category: "APIs",
-            displayName: "API: Products",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ApiProductsModel("list")
-        };
-
-        return widgetOrder;
     }
 }
 
@@ -24,36 +11,10 @@ export class ApiProductsDropdownHandlers implements IWidgetHandler {
     public async getWidgetModel(): Promise<ApiProductsModel> {
         return new ApiProductsModel("dropdown");
     }
-
-  public async getWidgetOrder(): Promise<IWidgetOrder> {
-    const widgetOrder: IWidgetOrder = {
-      name: "api-products-dropdown",
-      category: "APIs",
-      displayName: "API: Products (dropdown)",
-      iconClass: "widget-icon widget-icon-api-management",
-      requires: ["html"],
-      createModel: async () => new ApiProductsModel("dropdown"),
-    };
-
-    return widgetOrder;
-  }
 }
 
 export class ApiProductsTilesHandlers implements IWidgetHandler {
     public async getWidgetModel(): Promise<ApiProductsModel> {
         return new ApiProductsModel("tiles");
-    }
-
-    public async getWidgetOrder(): Promise<IWidgetOrder> {
-        const widgetOrder: IWidgetOrder = {
-            name: "api-products-tiles",
-            category: "APIs",
-            displayName: "API: Products (tiles)",
-            iconClass: "widget-icon widget-icon-api-management",
-            requires: ["html"],
-            createModel: async () => new ApiProductsModel("tiles")
-        };
-
-        return widgetOrder;
     }
 }
