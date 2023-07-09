@@ -37,7 +37,6 @@ import { ProductSubscriptionsModule } from "./components/products/product-subscr
 import { App } from "./components/app/app";
 import { ReportsEditorModule } from "./components/reports/ko/reportsEditor.module";
 import { ResetPasswordDesignModule } from "./components/users/reset-password/resetPassword.design.module";
-import { ConfirmPasswordModule } from "./components/users/confirm-password/ko/confirmPassword.module";
 import { ConfirmPasswordEditorModule } from "./components/users/confirm-password/ko/confirmPasswordEditor.module";
 import { HelpModule } from "./components/help";
 import { ChangePasswordModule } from "./components/users/change-password/ko/changePassword.module";
@@ -86,7 +85,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new OperationDetailsDesignModule());
         injector.bindModule(new ReportsEditorModule());
         injector.bindModule(new ResetPasswordDesignModule());
-        injector.bindModule(new ConfirmPasswordModule());
         injector.bindModule(new ConfirmPasswordEditorModule());
         injector.bindModule(new ChangePasswordModule());
         injector.bindModule(new ChangePasswordEditorModule());
