@@ -18,7 +18,6 @@ import { SigninDesignModule } from "./components/users/signin/signin.design.modu
 import { SigninSocialModule } from "./components/users/signin-social/signinSocial.module";
 import { SigninSocialEditorModule } from "./components/users/signin-social/signinSocial.design.module";
 import { SignupSocialDesignModule } from "./components/users/signup-social/signupSocial.design.module";
-import { SignupModule } from "./components/users/signup/signup.module";
 import { SignupDesignModule } from "./components/users/signup/signup.design.module";
 import { ProfileModule } from "./components/users/profile/profile.module";
 import { ProfileDesignModule } from "./components/users/profile/profile.design.module";
@@ -77,7 +76,6 @@ export class ApimDesignModule implements IInjectorModule {
         injector.bindModule(new SigninSocialModule());
         injector.bindModule(new SigninSocialEditorModule());
         injector.bindModule(new SignupSocialDesignModule());
-        injector.bindModule(new SignupModule());
         injector.bindModule(new SignupDesignModule());
         injector.bindModule(new ProfileModule());
         injector.bindModule(new ProfileDesignModule());
