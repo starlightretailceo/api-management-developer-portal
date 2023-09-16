@@ -7,7 +7,7 @@ import { ValidationSummaryModel } from "./validationSummaryModel";
 import { ValidationSummaryModelBinder } from "./validationSummaryModelBinder";
 
 
-export class ValidationSummaryModule implements IInjectorModule {
+export class ValidationSummaryPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("validationSummaryModelBinder", ValidationSummaryModelBinder);
         injector.bindSingleton("validationSummaryViewModelBinder", ValidationSummaryViewModelBinder)

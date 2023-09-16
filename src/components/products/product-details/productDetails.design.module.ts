@@ -9,14 +9,14 @@ import { IWidgetService } from "@paperbits/common/widgets";
 
 export class ProductDetailsDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
-        // injector.bind("productApisEditor", ProductDetailsEditor);
+        injector.bind("productDetails", ProductDetailsViewModel);
         injector.bindSingleton("productDetailsModelBinder", ProductDetailsModelBinder);
         injector.bindSingleton("productDetailsViewModelBinder", ProductDetailsViewModelBinder)
         injector.bindSingleton("productDetailsHandlers", ProductDetailsHandlers);
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("productDetails", {
+        widgetService.registerWidget("product-details", {
             modelDefinition: ProductDetailsModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: ProductDetailsViewModel,
@@ -24,12 +24,10 @@ export class ProductDetailsDesignModule implements IInjectorModule {
             viewModelBinder: ProductDetailsViewModelBinder
         });
 
-        widgetService.registerWidgetEditor("productDetails", {
-            displayName: "Product Details",
+        widgetService.registerWidgetEditor("product-details", {
+            displayName: "Product: Details",
             category: "Products",
             iconClass: "widget-icon widget-icon-api-management",
-            componentBinder: KnockoutComponentBinder,
-            componentDefinition: null, // ProductDetailsEditor,
             handlerComponent: ProductDetailsHandlers
         });
     }

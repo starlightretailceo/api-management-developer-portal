@@ -7,7 +7,7 @@ import { ResetPasswordModel } from "./resetPasswordModel";
 import { KnockoutComponentBinder } from "@paperbits/core/ko";
 
 
-export class ResetPasswordModule implements IInjectorModule {
+export class ResetPasswordPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bind("resetPassword", ResetPasswordViewModel);
         injector.bindSingleton("resetPasswordModelBinder", ResetPasswordModelBinder);

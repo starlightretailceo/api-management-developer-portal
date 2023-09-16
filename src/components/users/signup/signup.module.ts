@@ -7,7 +7,7 @@ import { SignupModel } from "./signupModel";
 import { SignupModelBinder } from "./signupModelBinder";
 
 
-export class SignupModule implements IInjectorModule {
+export class SignupPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("signupModelBinder", SignupModelBinder);
         injector.bindSingleton("signupViewModelBinder", SignupViewModelBinder)

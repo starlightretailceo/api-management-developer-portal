@@ -7,7 +7,7 @@ import { HistoryOfApiViewModel } from "./historyOfApiViewModel";
 import { HistoryOfApiViewModelBinder } from "./historyOfApiViewModelBinder";
 
 
-export class HistoryOfApiModule implements IInjectorModule {
+export class HistoryOfApiPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("historyOfApiModelBinder", HistoryOfApiModelBinder);
         injector.bindSingleton("historyOfApiViewModelBinder", HistoryOfApiViewModelBinder)

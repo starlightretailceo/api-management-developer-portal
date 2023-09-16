@@ -8,7 +8,7 @@ import { ProfileModel } from "./profileModel";
 import { ProfileModelBinder } from "./profileModelBinder";
 
 
-export class ProfileModule implements IInjectorModule {
+export class ProfilePublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("profileModelBinder", ProfileModelBinder);
         injector.bindSingleton("profileViewModelBinder", ProfileViewModelBinder)

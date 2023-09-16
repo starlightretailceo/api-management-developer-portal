@@ -7,7 +7,7 @@ import { ReportsViewModel } from "./reportsViewModel";
 import { ReportsViewModelBinder } from "./reportsViewModelBinder";
 
 
-export class ReportsModule implements IInjectorModule {
+export class ReportsPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("reportsModelBinder", ReportsModelBinder);
         injector.bindSingleton("reportsViewModelBinder", ReportsViewModelBinder)

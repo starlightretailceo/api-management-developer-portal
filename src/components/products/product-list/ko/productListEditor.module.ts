@@ -20,7 +20,7 @@ export class ProductListEditorModule implements IInjectorModule {
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("productList", {
+        widgetService.registerWidget("product-list", {
             modelDefinition: ProductListModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: ProductListViewModel,
@@ -28,7 +28,7 @@ export class ProductListEditorModule implements IInjectorModule {
             viewModelBinder: ProductListViewModelBinder
         });
 
-        widgetService.registerWidgetEditor("productList", {
+        widgetService.registerWidgetEditor("product-list", {
             displayName: "List of products",
             category: "Products",
             iconClass: "widget-icon widget-icon-api-management",

@@ -16,7 +16,7 @@ export class ProductSubscriptionsEditorModule implements IInjectorModule {
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("productSubscription", {
+        widgetService.registerWidget("product-subscriptions", {
             modelDefinition: ProductSubscriptionsModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: ProductSubscriptionsViewModel,
@@ -24,7 +24,7 @@ export class ProductSubscriptionsEditorModule implements IInjectorModule {
             viewModelBinder: ProductSubscriptionsViewModelBinder
         });
 
-        widgetService.registerWidgetEditor("productSubscription", {
+        widgetService.registerWidgetEditor("product-subscriptions", {
             displayName: "Product: Subscriptions",
             category: "Products",
             iconClass: "widget-icon widget-icon-api-management",

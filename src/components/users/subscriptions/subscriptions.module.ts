@@ -6,7 +6,7 @@ import { SubscriptionsModel } from "./subscriptionsModel";
 import { KnockoutComponentBinder } from "@paperbits/core/ko";
 import { SubscriptionsViewModel } from "./ko/subscriptionsViewModel";
 
-export class SubscriptionsModule implements IInjectorModule {
+export class SubscriptionsPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("subscriptionsModelBinder", SubscriptionsModelBinder);
         injector.bindSingleton("subscriptionsViewModelBinder", SubscriptionsViewModelBinder)

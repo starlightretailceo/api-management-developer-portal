@@ -9,7 +9,7 @@ import { KnockoutComponentBinder } from "@paperbits/core/ko";
 import { ListOfApisViewModel } from "./listOfApisViewModel";
 
 
-export class ListOfApisEditorModule implements IInjectorModule {
+export class ListOfApisDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bind("listOfApisEditor", ListOfApisEditor);
         injector.bindSingleton("listOfApisModelBinder", ListOfApisModelBinder);

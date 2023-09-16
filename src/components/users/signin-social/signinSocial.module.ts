@@ -7,14 +7,14 @@ import { SigninSocialModel } from "./signinSocialModel";
 import { SigninSocialModelBinder } from "./signinSocialModelBinder";
 
 
-export class SigninSocialModule implements IInjectorModule {
+export class SigninSocialPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("signinSocialModelBinder", SigninSocialModelBinder);
         injector.bindSingleton("signinSocialViewModelBinder", SigninSocialViewModelBinder)
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("signinSocial", {
+        widgetService.registerWidget("signin-social", {
             modelDefinition: SigninSocialModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: SigninSocialViewModel,

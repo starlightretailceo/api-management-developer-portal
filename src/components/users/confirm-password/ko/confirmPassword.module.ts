@@ -7,7 +7,7 @@ import { ConfirmPasswordViewModel } from "./confirmPasswordViewModel";
 import { ConfirmPasswordHandlers } from "../confirmPasswordHandlers";
 import { IWidgetService } from "@paperbits/common/widgets";
 
-export class ConfirmPasswordModule implements IInjectorModule {
+export class ConfirmPasswordPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("confirmPasswordModelBinder", ConfirmPasswordModelBinder);
         injector.bindSingleton("confirmPasswordViewModelBinder", ConfirmPasswordViewModelBinder)

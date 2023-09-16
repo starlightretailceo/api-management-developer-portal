@@ -7,7 +7,7 @@ import { KnockoutComponentBinder } from "@paperbits/core/ko";
 import { SigninViewModel } from "./ko/signinViewModel";
 
 
-export class SigninModule implements IInjectorModule {
+export class SigninPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("signinModelBinder", SigninModelBinder);
         injector.bindSingleton("signinViewModelBinder", SigninViewModelBinder)

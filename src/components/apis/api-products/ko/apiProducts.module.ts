@@ -7,7 +7,7 @@ import { ApiProductsViewModel } from "./apiProductsViewModel";
 import { ApiProductsViewModelBinder } from "./apiProductsViewModelBinder";
 
 
-export class ApiProductsModule implements IInjectorModule {
+export class ApiProductsPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("apiProductsModelBinder", ApiProductsModelBinder);
         injector.bindSingleton("apiProductsViewModelBinder", ApiProductsViewModelBinder)

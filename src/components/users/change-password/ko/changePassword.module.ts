@@ -7,7 +7,7 @@ import { ChangePasswordViewModel } from "./changePasswordViewModel";
 import { ChangePasswordViewModelBinder } from "./changePasswordViewModelBinder";
 
 
-export class ChangePasswordModule implements IInjectorModule {
+export class ChangePasswordPublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bindSingleton("changePasswordModelBinder", ChangePasswordModelBinder);
         injector.bindSingleton("changePasswordViewModelBinder", ChangePasswordViewModelBinder)

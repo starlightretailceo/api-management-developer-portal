@@ -9,7 +9,7 @@ import { ProductSubscribeViewModel } from "./productSubscribeViewModel";
 import { ProductSubscribeViewModelBinder } from "./productSubscribeViewModelBinder";
 
 
-export class ProductSubscribeModule implements IInjectorModule {
+export class ProductSubscribePublishModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bind("productSubscribeEditor", ProductSubscribeEditor);
         injector.bindSingleton("productSubscribeModelBinder", ProductSubscribeModelBinder);
@@ -18,12 +18,13 @@ export class ProductSubscribeModule implements IInjectorModule {
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("productSubscribe", {
+        widgetService.registerWidget("product-subscribe", {
             modelDefinition: ProductSubscribeModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: ProductSubscribeViewModel,
             modelBinder: ProductSubscribeModelBinder,
             viewModelBinder: ProductSubscribeViewModelBinder
         });
+
     }
 }

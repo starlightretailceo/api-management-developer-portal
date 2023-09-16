@@ -8,7 +8,7 @@ import { DetailsOfApiEditor } from "./detailsOfApiEditor";
 import { DetailsOfApiViewModel } from "./detailsOfApiViewModel";
 import { DetailsOfApiViewModelBinder } from "./detailsOfApiViewModelBinder";
 
-export class DetailsOfApiEditorModule implements IInjectorModule {
+export class DetailsOfApiDesignModule implements IInjectorModule {
     public register(injector: IInjector): void {
         injector.bind("detailsOfApiEditor", DetailsOfApiViewModel);
         injector.bindSingleton("detailsOfApiModelBinder", DetailsOfApiModelBinder);
@@ -17,7 +17,7 @@ export class DetailsOfApiEditorModule implements IInjectorModule {
 
         const widgetService = injector.resolve<IWidgetService>("widgetService");
 
-        widgetService.registerWidget("detailsOfApiEditor", {
+        widgetService.registerWidget("detailsOfApi", {
             modelDefinition: DetailsOfApiModel,
             componentBinder: KnockoutComponentBinder,
             componentDefinition: DetailsOfApiViewModel,
@@ -25,7 +25,7 @@ export class DetailsOfApiEditorModule implements IInjectorModule {
             viewModelBinder: DetailsOfApiViewModelBinder
         });
 
-        widgetService.registerWidgetEditor("detailsOfApiEditor", {
+        widgetService.registerWidgetEditor("detailsOfApi", {
             displayName: "API: Details",
             category: "APIs",
             iconClass: "widget-icon widget-icon-api-management",
