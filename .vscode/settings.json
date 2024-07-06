@@ -31,6 +31,12 @@
     "mochaExplorer.files": ["tests/**/*.spec.ts", "src/**/*.spec.ts"],
     "mochaExplorer.require": "./mocha",
     "mochaExplorer.timeout": 30000,
-    "sfmt.insize": 4
+    "sfmt.insize": 4,
+    "azureFunctions.deploySubpath": "examples/publisher/azure-function",
+    "azureFunctions.projectLanguage": "TypeScript",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "examples/publisher/azure-function",
+    "azureFunctions.preDeployTask": "npm prune (functions)"
   
 }
