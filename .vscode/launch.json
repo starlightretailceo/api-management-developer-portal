@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "Tests",
       "type": "node",
@@ -24,8 +25,7 @@
       },
       "console": "internalConsole"
     },
-    {
-      "name": "Publisher",
+    {   "name": "Publisher",
       "type": "node",
       "request": "launch",
       "protocol": "inspector",
